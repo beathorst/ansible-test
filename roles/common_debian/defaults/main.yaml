@@ -1,0 +1,8 @@
+packages:
+  - curl
+  - htop
+  - zip
+  - tar
+  - net-tools
+  - qemu-guest-agent
+  - jq

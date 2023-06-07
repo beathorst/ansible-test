@@ -1,0 +1,4 @@
+docker_users:
+  - wysiwyg
+
+docker_group: docker

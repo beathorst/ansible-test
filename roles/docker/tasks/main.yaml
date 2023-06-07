@@ -1,0 +1,14 @@
+---
+- name: "groups | adding docker group"
+  group:
+    name: "{{ docker_group }}"
+    state: present
+  become: true
+
+- name: "users | adding docker users (for use without sudo)"
+  user:
+    name: "{{ item }}"
+    append: yes
+    groups: "{{ docker_group }}"
+  become: true
+  with_items: '{{ docker_users }}'

@@ -1,0 +1,22 @@
+---
+- name: "Install apache webserver"
+  package:
+    name: "{{ apache_package }}"
+    state: "present"
+  become: true
+
+- name: "Start apache service"
+  service:
+    name: "{{ apache_service }}"
+    state: "started"
+  become: true
+
+#- name: "Check for proper response"
+#  uri:
+#    url: "http://localhost/"
+#    return_content: yes
+#    follow_redirects: yes
+#  register: _result
+#  until: _result.status == 200
+#  retries: 10
+#  delay: 1
