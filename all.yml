@@ -1,0 +1,8 @@
+---
+- hosts: debian
+  roles:
+    - common_debian
+
+- hosts: webserver
+  roles:
+    - apache
