@@ -11,12 +11,12 @@
     state: "started"
   become: true
 
-#- name: "Check for proper response"
-#  uri:
-#    url: "http://localhost/"
-#    return_content: yes
-#    follow_redirects: yes
-#  register: _result
-#  until: _result.status == 200
-#  retries: 10
-#  delay: 1
+- name: "Check for proper response"
+  uri:
+    url: "http://localhost/"
+    return_content: yes
+    follow_redirects: yes
+  register: _result
+  until: _result.status == 200
+  retries: 10
+  delay: 1
