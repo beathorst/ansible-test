@@ -23,12 +23,11 @@
   register: reboot_required_file
   stat: path=/var/run/reboot-required get_md5=no
 
-tasks:
-  - name: Set timezone
-    timezone: name=Europe/Berlin
-    become: yes
-    tags:
-      - time
+- name: Set timezone
+  timezone: name=Europe/Berlin
+  become: yes
+  tags:
+    - time
 
 #- name: "Reboot if kernel updated"
 #  reboot:
